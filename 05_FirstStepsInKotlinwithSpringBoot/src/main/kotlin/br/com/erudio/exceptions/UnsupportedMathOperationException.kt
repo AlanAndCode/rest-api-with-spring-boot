@@ -1,4 +1,6 @@
 package br.com.erudio.exceptions
 
-class UnsupportedMathOperationException {
-}
+
+import java.lang.*
+
+class UnsupportedMathOperationException(exception: String?): RuntimeException(exception)
