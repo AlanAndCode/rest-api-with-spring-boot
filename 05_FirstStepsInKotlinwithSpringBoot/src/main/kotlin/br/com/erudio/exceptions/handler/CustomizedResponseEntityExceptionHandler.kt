@@ -1,5 +1,7 @@
-package br.com.erudio.exceptions
+package br.com.erudio.exceptions.handler
 
+import br.com.erudio.exceptions.ExceptioResponse
+import br.com.erudio.exceptions.ResourceNotFoundException
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.ControllerAdvice
@@ -7,16 +9,15 @@ import org.springframework.web.bind.annotation.ExceptionHandler
 import org.springframework.web.bind.annotation.RestController
 import org.springframework.web.context.request.WebRequest
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler
-import java.lang.*
+import java.lang.Exception
 import java.util.*
-
 
 @ControllerAdvice
 @RestController
 class CustomizedResponseEntityExceptionHandler : ResponseEntityExceptionHandler() {
 @ExceptionHandler(Exception::class)
     fun handleAllExceptions(ex: Exception, request: WebRequest):
-            ResponseEntity<ExceptioResponse>{
+        ResponseEntity<ExceptioResponse> {
         val exceptioResponse = ExceptioResponse(
             Date(),
             ex.message,
@@ -24,15 +25,15 @@ class CustomizedResponseEntityExceptionHandler : ResponseEntityExceptionHandler(
         )
         return ResponseEntity<ExceptioResponse>(exceptioResponse, HttpStatus.INTERNAL_SERVER_ERROR)
     }
-    @ExceptionHandler(UnsupportedMathOperationException::class)
-    fun handleBadRequestExceptions(ex: Exception, request: WebRequest):
-            ResponseEntity<ExceptioResponse>{
+    @ExceptionHandler(ResourceNotFoundException::class)
+    fun handleResourceNotFoundExceptions(ex: Exception, request: WebRequest):
+            ResponseEntity<ExceptioResponse> {
         val exceptioResponse = ExceptioResponse(
             Date(),
             ex.message,
             request.getDescription(false)
         )
-        return ResponseEntity<ExceptioResponse>(exceptioResponse, HttpStatus.BAD_REQUEST)
+        return ResponseEntity<ExceptioResponse>(exceptioResponse, HttpStatus.NOT_FOUND)
     }
 
 }
