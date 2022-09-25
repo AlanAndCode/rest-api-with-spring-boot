@@ -1,10 +1,9 @@
 package br.com.erudio.data.vo.v2
 
-import jakarta.persistence.*
 import java.util.Date
 
 
-data class PersonVO2 (
+data class PersonVO (
 
 
 var id: Long = 0,
