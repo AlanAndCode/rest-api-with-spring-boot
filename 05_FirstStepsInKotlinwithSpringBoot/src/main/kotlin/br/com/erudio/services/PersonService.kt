@@ -50,12 +50,18 @@ class PersonService {
     fun create(person: PersonVO): PersonVO {
         logger.info("Creating one person with name ${person.firstName}!")
         var entity: Person = DozerMapper.parseObject(person, Person::class.java)
-        return DozerMapper.parseObject(repository.save(entity), PersonVO::class.java)
+        val personVO: PersonVO =  DozerMapper.parseObject(repository.save(entity), PersonVO::class.java)
+        val withSelfRel = linkTo(PersonController::class.java).slash(personVO.key).withSelfRel()
+        personVO.add(withSelfRel)
+        return personVO
     }
     fun createV2(person: PersonV2): PersonV2 {
         logger.info("Creating one person with name ${person.firstName}!")
         var entity: Person = mapper.mapVOToEntity(person)
-        return mapper.mapEntityToVO(repository.save(entity))
+        val personV2: PersonV2 =  DozerMapper.parseObject(repository.save(entity), PersonV2::class.java)
+        val withSelfRel = linkTo(PersonController::class.java).slash(personV2.key).withSelfRel()
+        personV2.add(withSelfRel)
+        return personV2
     }
 
     fun update(person: PersonVO) : PersonVO {
@@ -66,7 +72,10 @@ class PersonService {
         entity.lastName = person.lastName
         entity.address = person.address
         entity.gender = person.gender
-        return DozerMapper.parseObject(repository.save(entity), PersonVO::class.java)
+        val personVO: PersonVO =  DozerMapper.parseObject(repository.save(entity), PersonVO::class.java)
+        val withSelfRel = linkTo(PersonController::class.java).slash(personVO.key).withSelfRel()
+        personVO.add(withSelfRel)
+        return personVO
     }
 
     fun delete(id: Long) {
