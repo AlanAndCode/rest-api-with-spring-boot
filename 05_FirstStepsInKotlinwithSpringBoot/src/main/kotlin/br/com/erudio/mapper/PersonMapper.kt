@@ -10,7 +10,7 @@ class PersonMapper {
 
     fun mapEntityToVO(person: Person): PersonVO {
         val vo = PersonVO()
-        vo.id = person.id
+        vo.key = person.id
         vo.address = person.address
         vo.birthDay = Date()
         vo.firstName = person.firstName
@@ -22,7 +22,7 @@ class PersonMapper {
 //
     fun mapVOToEntity(person: PersonVO): Person {
         val entity = Person()
-        entity.id = person.id
+        entity.id = person.key
         entity.address = person.address
         //entity.birthDay = Date()
         entity.firstName = person.firstName
