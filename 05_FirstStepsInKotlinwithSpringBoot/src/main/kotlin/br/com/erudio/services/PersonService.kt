@@ -39,11 +39,16 @@ class PersonService {
     }
 
     fun findAll(): List<PersonVO> {
-        logger.info("Finding a list of persons")
+        logger.info("Finding all people")
 
 
       val persons =  repository.findAll()
-        return DozerMapper.parseListObjects(persons, PersonVO::class.java)
+        val vos  = DozerMapper.parseListObjects(persons, PersonVO::class.java)
+        for(person in vos) {
+            val withSelfRel = linkTo(PersonController::class.java).slash(person.key).withSelfRel()
+            person.add(withSelfRel)
+        }
+        return vos
     }
 
 
