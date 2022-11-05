@@ -1,4 +1,4 @@
-package br.com.erudio.services
+package br.com.erudio.mockito.services
 
 import br.com.erudio.controller.PersonController
 import br.com.erudio.data.vo.v1.PersonVO
