@@ -57,6 +57,35 @@ internal class PersonServiceTest {
     @Test
     fun findAll() {
 
+        val list = inputObject.mockEntityList()
+        `when`(repository.findAll()).thenReturn(list)
+
+        val persons = service.findAll()
+
+        assertNotNull(persons)
+        assertEquals(14, persons.size)
+
+        val personOne = persons[1]
+        assertNotNull(personOne)
+        assertNotNull(personOne.key)
+        assertNotNull(personOne.links)
+        println(personOne.links)
+        assertTrue(personOne.links.toString().contains("</person/v1/1>;rel=\"self\""))
+        assertEquals("Address Test1", personOne.address)
+        assertEquals("First Name Test1", personOne.firstName)
+        assertEquals("Last Name Test1", personOne.lastName)
+        assertEquals("Female", personOne.gender)
+
+        val personFour = persons[4]
+        assertNotNull(personFour)
+        assertNotNull(personFour.key)
+        assertNotNull(personFour.links)
+        println(personFour.links)
+        assertTrue(personFour.links.toString().contains("</person/v1/4>;rel=\"self\""))
+        assertEquals("Address Test4", personFour.address)
+        assertEquals("First Name Test4", personFour.firstName)
+        assertEquals("Last Name Test4", personFour.lastName)
+        assertEquals("Male", personFour.gender)
     }
 
     @Test
@@ -68,6 +97,7 @@ val exception: Exception = assertThrows(
         val expectedMessage = "It is not allowed to persist a null object"
         val actualMessage = exception.message
         assertTrue(actualMessage!!.contains(expectedMessage))
+
     }
     @Test
     fun create() {
