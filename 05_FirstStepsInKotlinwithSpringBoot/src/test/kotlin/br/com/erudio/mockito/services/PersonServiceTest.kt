@@ -47,10 +47,10 @@ internal class PersonServiceTest {
         assertNotNull(result.links)
         println(result.links)
         assertTrue(result.links.toString().contains("/person/v1/1"))
-        assertEquals("", result.address)
-        assertEquals("", result.firstName)
-        assertEquals("", result.lastName)
-        assertEquals("", result.gender)
+        assertEquals("Address Test1", result.address)
+        assertEquals("First Name Test1", result.firstName)
+        assertEquals("Last Name Test1", result.lastName)
+        assertEquals("Female", result.gender)
 
 
     }
