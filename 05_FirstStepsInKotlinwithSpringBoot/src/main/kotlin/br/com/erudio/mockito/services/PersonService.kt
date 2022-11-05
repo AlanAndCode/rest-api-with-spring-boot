@@ -2,6 +2,7 @@ package br.com.erudio.mockito.services
 
 import br.com.erudio.controller.PersonController
 import br.com.erudio.data.vo.v1.PersonVO
+import br.com.erudio.exceptions.RequiredObjectisNullException
 import br.com.erudio.exceptions.ResourceNotFoundException
 import br.com.erudio.mapper.DozerMapper
 import br.com.erudio.mapper.PersonMapper
@@ -52,7 +53,8 @@ class PersonService {
     }
 
 
-    fun create(person: PersonVO): PersonVO {
+    fun create(person: PersonVO?): PersonVO {
+        if(person == null) throw RequiredObjectisNullException()
         logger.info("Creating one person with name ${person.firstName}!")
         var entity: Person = DozerMapper.parseObject(person, Person::class.java)
         val personVO: PersonVO =  DozerMapper.parseObject(repository.save(entity), PersonVO::class.java)
@@ -60,16 +62,10 @@ class PersonService {
         personVO.add(withSelfRel)
         return personVO
     }
-    fun createV2(person: PersonV2): PersonV2 {
-        logger.info("Creating one person with name ${person.firstName}!")
-        var entity: Person = mapper.mapVOToEntity(person)
-        val personV2: PersonV2 =  DozerMapper.parseObject(repository.save(entity), PersonV2::class.java)
-        val withSelfRel = linkTo(PersonController::class.java).slash(personV2.key).withSelfRel()
-        personV2.add(withSelfRel)
-        return personV2
-    }
 
-    fun update(person: PersonVO) : PersonVO {
+
+    fun update(person: PersonVO?) : PersonVO {
+        if(person == null) throw RequiredObjectisNullException()
         logger.info("Updating a person with ID  ${person.key}!")
         val entity = repository.findById(person.key)
             .orElseThrow { ResourceNotFoundException("No records found this ID!") }
