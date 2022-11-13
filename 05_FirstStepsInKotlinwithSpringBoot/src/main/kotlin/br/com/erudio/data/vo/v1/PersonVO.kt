@@ -11,7 +11,7 @@ import org.springframework.hateoas.RepresentationModel
 data class PersonVO (
 
     @Mapping("id")
-    @field:JsonPropertyOrder("id")
+    @field:JsonProperty("id")
     var key: Long = 0,
     var firstName: String = "",
     var lastName: String = "",
