@@ -6,10 +6,14 @@ spring:
        password: admin123
      jpa:
        hibernate:
-         ddl-auto: update
+         ddl-auto: none
        show-sql: false
-spring-doc:
-  paths-to-match:
-    - /api/**/v1/**
-    swagger-ui:
-   use-root-path: true
+     spring-doc:
+       paths-to-match:
+         - /api/**/v1/**
+       swagger-ui:
+         use-root-path: true
+     flyway:
+
+     locations:
+       classpath: src/main/resources/db/migration
