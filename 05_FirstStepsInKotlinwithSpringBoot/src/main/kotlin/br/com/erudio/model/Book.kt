@@ -15,7 +15,7 @@ var id: Long = 0,
     @Column( nullable = false, length = 180)
 var author: String = "",
     @Column(name = "launch_date")
-var launchdate: Date? = null,
+var launchDate: Date? = null,
 
     @Column(nullable = false)
 var price: Double = 0.0,
