@@ -10,7 +10,6 @@ import br.com.erudio.model.Person
 import br.com.erudio.repository.PersonRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo
-import br.com.erudio.data.vo.v2.PersonVO as PersonV2
 
 import org.springframework.stereotype.Service
 
@@ -22,7 +21,6 @@ class PersonService {
     private lateinit var repository: PersonRepository
 
     @Autowired
-    private lateinit var mapper: PersonMapper
     private val logger = Logger.getLogger(PersonService::class.java.name)
 
     fun finById(id: Long): PersonVO {
