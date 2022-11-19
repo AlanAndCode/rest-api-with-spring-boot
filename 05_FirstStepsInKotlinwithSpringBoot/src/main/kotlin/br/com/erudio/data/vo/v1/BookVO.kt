@@ -15,7 +15,7 @@ data class BookVO (
     @field:JsonProperty("id")
 var key: Long = 0,
 var author: String = "",
-var launchdate: Date? = null,
+var launchDate: Date? = null,
 var price: Double = 0.0,
 var title: String = ""
 
