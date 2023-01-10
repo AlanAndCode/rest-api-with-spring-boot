@@ -8,7 +8,6 @@ import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 class SwaggerIntegrationTest() : AbstractIntegrationTest() {
-
 	@Test
 	fun shouldDisplaySwaggerUiPage() {
 		val content = given()
