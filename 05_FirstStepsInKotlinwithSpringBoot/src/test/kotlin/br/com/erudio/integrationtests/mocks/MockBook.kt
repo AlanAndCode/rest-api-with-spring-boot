@@ -4,7 +4,6 @@ import br.com.erudio.data.vo.v1.BookVO
 import br.com.erudio.model.Book
 
 class MockBook {
-
     fun mockEntityList(): ArrayList<Book> {
         val books: ArrayList<Book> = ArrayList<Book>()
         for (i in 0..13) {
