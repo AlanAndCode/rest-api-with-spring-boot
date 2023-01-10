@@ -20,7 +20,6 @@ import org.springframework.boot.test.context.SpringBootTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation::class)
 @TestInstance(Lifecycle.PER_CLASS)
 class PersonControllerCorsWithJson() : AbstractIntegrationTest() {
-
 	private lateinit var specification: RequestSpecification
 	private lateinit var objectMapper: ObjectMapper
 	private lateinit var person: PersonVO
