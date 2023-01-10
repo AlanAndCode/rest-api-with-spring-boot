@@ -9,7 +9,6 @@ import br.com.erudio.model.Person
 import br.com.erudio.integrationtests.swagger.mocks.MockPerson
 
 class DozerMapperTest {
-
     var inputObject: MockPerson? = null
 
     @BeforeEach
