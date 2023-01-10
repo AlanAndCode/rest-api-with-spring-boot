@@ -5,6 +5,7 @@ import br.com.erudio.data.vo.v1.PersonVO
 import br.com.erudio.model.Person
 
 class MockPerson {
+
     fun mockEntity(): Person {
         return mockEntity(0)
     }
