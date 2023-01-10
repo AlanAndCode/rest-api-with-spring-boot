@@ -19,7 +19,6 @@ import java.util.*
 
 @ExtendWith(MockitoExtension::class)
 internal class BookServiceTest {
-
     private lateinit var inputObject: MockBook
 
     @InjectMocks
