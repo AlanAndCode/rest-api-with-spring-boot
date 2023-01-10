@@ -10,7 +10,6 @@ import java.util.stream.Stream
 
 @ContextConfiguration(initializers = [AbstractIntegrationTest.Initializer::class])
 open class AbstractIntegrationTest {
-
     internal class Initializer : ApplicationContextInitializer<ConfigurableApplicationContext>{
 
         override fun initialize(applicationContext: ConfigurableApplicationContext) {
