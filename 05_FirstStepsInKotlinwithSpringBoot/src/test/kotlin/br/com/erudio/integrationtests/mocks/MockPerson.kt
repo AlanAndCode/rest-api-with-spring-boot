@@ -1,7 +1,8 @@
-package br.com.erudio.unittests.mocks
+package br.com.erudio.integrationtests.swagger.mocks
 
 import java.util.ArrayList
-
+import br.com.erudio.data.vo.v1.PersonVO
+import br.com.erudio.model.Person
 
 class MockPerson {
     fun mockEntity(): Person {

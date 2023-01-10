@@ -1,4 +1,4 @@
-package br.com.erudio.unittests.mocks
+package br.com.erudio.integrationtests.mocks
 
 import br.com.erudio.data.vo.v1.BookVO
 import br.com.erudio.model.Book
