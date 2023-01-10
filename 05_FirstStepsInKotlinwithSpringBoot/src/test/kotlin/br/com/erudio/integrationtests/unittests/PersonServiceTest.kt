@@ -18,7 +18,6 @@ import java.util.*
 
 @ExtendWith(MockitoExtension::class)
 internal class PersonServiceTest {
-
     private lateinit var inputObject: MockPerson
 
 
