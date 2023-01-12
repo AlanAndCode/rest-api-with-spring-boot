@@ -1,13 +1,9 @@
 package br.com.erudio.integrationtests.vo
 
-import com.fasterxml.jackson.annotation.JsonIgnore
-import com.fasterxml.jackson.annotation.JsonProperty
-import com.fasterxml.jackson.annotation.JsonPropertyOrder
-import com.github.dozermapper.core.Mapping
-import jakarta.persistence.*
-import org.springframework.hateoas.RepresentationModel
 
+import jakarta.xml.bind.annotation.XmlRootElement
 
+@XmlRootElement
 data class PersonVO (
 
     var id: Long = 0,
@@ -15,4 +11,5 @@ data class PersonVO (
     var lastName: String = "",
     var address: String = "",
     var gender: String = "",
+    var enabled: Boolean = true
 )
