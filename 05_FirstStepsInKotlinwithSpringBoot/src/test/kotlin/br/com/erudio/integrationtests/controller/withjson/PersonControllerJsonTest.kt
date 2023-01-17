@@ -1,7 +1,7 @@
 package br.com.erudio.integrationtests.controller.withjson
 
 import br.com.erudio.integrationtests.TestConfigs
-import br.com.erudio.integrationtests.testconainers.AbstractIntegrationTest
+import br.com.erudio.integrationtests.testcontainers.AbstractIntegrationTest
 import br.com.erudio.integrationtests.vo.AccountCredentialsVO
 import br.com.erudio.integrationtests.vo.PersonVO
 import br.com.erudio.integrationtests.vo.TokenVO
@@ -221,7 +221,7 @@ class PersonControllerJsonTest : AbstractIntegrationTest() {
 
         val people = objectMapper.readValue(content, Array<PersonVO>::class.java)
 
-        val item1 = people[1]
+        val item1 = people[0]
 
         assertNotNull(item1.id)
         assertNotNull(item1.firstName)
