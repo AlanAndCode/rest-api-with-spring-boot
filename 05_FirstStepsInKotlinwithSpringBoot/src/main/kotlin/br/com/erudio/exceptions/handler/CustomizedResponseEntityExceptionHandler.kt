@@ -1,4 +1,4 @@
-ppackage br.com.erudio.exceptions.handler
+package br.com.erudio.exceptions.handler
 
 import br.com.erudio.exceptions.ExceptionResponse
 import br.com.erudio.exceptions.InvalidJwtAuthenticationException
