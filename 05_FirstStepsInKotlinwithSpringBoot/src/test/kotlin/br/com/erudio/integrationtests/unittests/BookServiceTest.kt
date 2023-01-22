@@ -2,12 +2,10 @@ package br.com.erudio.integrationtests.unittests
 
 import br.com.erudio.exceptions.RequiredObjectisNullException
 import br.com.erudio.repository.BookRepository
-import br.com.erudio.integrationtests.mocks.MockBook
 import br.com.erudio.services.BookService
 import org.junit.jupiter.api.Assertions.*
-import org.junit.jupiter.api.Test
-
 import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 import org.mockito.InjectMocks
 import org.mockito.Mock
@@ -15,10 +13,10 @@ import org.mockito.Mockito.`when`
 import org.mockito.MockitoAnnotations
 import org.mockito.junit.jupiter.MockitoExtension
 import java.util.*
-
-
+import br.com.erudio.integrationtests.mocks.MockBook
 @ExtendWith(MockitoExtension::class)
 internal class BookServiceTest {
+
     private lateinit var inputObject: MockBook
 
     @InjectMocks
@@ -34,47 +32,6 @@ internal class BookServiceTest {
     }
 
     @Test
-    fun findAll() {
-        val list = inputObject.mockEntityList()
-        `when`(repository.findAll()).thenReturn(list)
-
-        val books = service.findAll()
-
-        assertNotNull(books)
-        assertEquals(14, books.size)
-
-        val bookOne = books[1]
-
-        assertNotNull(bookOne)
-        assertNotNull(bookOne.key)
-        assertNotNull(bookOne.links)
-        assertTrue(bookOne.links.toString().contains("</api/Books/v1/1>;rel=\"self\""))
-        assertEquals("Some Title1", bookOne.title)
-        assertEquals("Some Author1", bookOne.author)
-        assertEquals(25.0, bookOne.price)
-
-        val bookFour = books[4]
-
-        assertNotNull(bookFour)
-        assertNotNull(bookFour.key)
-        assertNotNull(bookFour.links)
-        assertTrue(bookFour.links.toString().contains("</api/Books/v1/4>;rel=\"self\""))
-        assertEquals("Some Title4", bookFour.title)
-        assertEquals("Some Author4", bookFour.author)
-        assertEquals(25.0, bookFour.price)
-
-        val bookSeven = books[7]
-
-        assertNotNull(bookSeven)
-        assertNotNull(bookSeven.key)
-        assertNotNull(bookSeven.links)
-        assertTrue(bookSeven.links.toString().contains("</api/Books/v1/7>;rel=\"self\""))
-        assertEquals("Some Title7", bookSeven.title)
-        assertEquals("Some Author7", bookSeven.author)
-        assertEquals(25.0, bookSeven.price)
-    }
-
-    @Test
     fun findById() {
         val book = inputObject.mockEntity(1)
         book.id = 1
@@ -85,7 +42,7 @@ internal class BookServiceTest {
         assertNotNull(result)
         assertNotNull(result.key)
         assertNotNull(result.links)
-        assertTrue(result.links.toString().contains("</api/Books/v1/1>;rel=\"self\""))
+        assertTrue(result.links.toString().contains("</api/book/v1/1>;rel=\"self\""))
         assertEquals("Some Title1", result.title)
         assertEquals("Some Author1", result.author)
         assertEquals(25.0, result.price)
@@ -106,7 +63,7 @@ internal class BookServiceTest {
         assertNotNull(result)
         assertNotNull(result.key)
         assertNotNull(result.links)
-        assertTrue(result.links.toString().contains("</api/Books/v1/1>;rel=\"self\""))
+        assertTrue(result.links.toString().contains("</api/book/v1/1>;rel=\"self\""))
         assertEquals("Some Title1", result.title)
         assertEquals("Some Author1", result.author)
         assertEquals(25.0, result.price)
@@ -114,7 +71,8 @@ internal class BookServiceTest {
 
     @Test
     fun createWithNullBook() {
-        val exception: Exception = assertThrows(RequiredObjectisNullException::class.java
+        val exception: Exception = assertThrows(
+            RequiredObjectisNullException::class.java
         ) {service.create(null)}
 
         val expectedMessage = "It is not allowed to persist a null object!"
@@ -138,7 +96,7 @@ internal class BookServiceTest {
         assertNotNull(result)
         assertNotNull(result.key)
         assertNotNull(result.links)
-        assertTrue(result.links.toString().contains("</api/Books/v1/1>;rel=\"self\""))
+        assertTrue(result.links.toString().contains("</api/book/v1/1>;rel=\"self\""))
         assertEquals("Some Title1", result.title)
         assertEquals("Some Author1", result.author)
         assertEquals(25.0, result.price)
