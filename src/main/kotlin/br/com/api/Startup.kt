@@ -9,4 +9,3 @@ class Startup
 fun main(args: Array<String>) {
 	runApplication<Startup>(*args)
 }
-DESCARREGOU O CELULAR
