@@ -6,12 +6,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="rest-api-with-spring-boot" />
         <module name="rest-with-spring-boot-and-kotlin-erudio" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="rest-api-with-spring-boot" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="rest-api-with-spring-boot" options="-parameters" />
       <module name="rest-with-spring-boot-and-kotlin-erudio" options="-parameters" />
     </option>
   </component>
