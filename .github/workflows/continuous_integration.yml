@@ -36,5 +36,5 @@ jobs:
       run: |
         docker tag rest-api-with-spring-boot-rest-api-with-spring-boot ${{ secrets.DOCKER_USERNAME }}/rest-api-with-spring-boot-rest-api-with-spring-boot:80ac0f2eff4b
         
-        docker push ${{ secrets.DOCKER_USERNAME }}/rest-api-with-spring-boot-rest-api-with-spring-boot:80ac0f2eff4b
+      
         docker push ${{ secrets.DOCKER_USERNAME }}/rest-api-with-spring-boot-rest-api-with-spring-boot:latest
