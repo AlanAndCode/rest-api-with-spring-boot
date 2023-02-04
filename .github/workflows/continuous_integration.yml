@@ -36,5 +36,5 @@ jobs:
       run: |
         docker tag ${{ secrets.DOCKER_USERNAME }}/rest-api-with-spring-boot-rest-api-with-spring-boot:latest rest-api-with-spring-boot-rest-api-with-spring-boot:${{github.run_id}}
         
-        docker push rest-api-with-spring-boot-rest-api-with-spring-boot:${{github.run_id}}
+        docker push ${{ secrets.DOCKER_USERNAME }}/rest-api-with-spring-boot-rest-api-with-spring-boot:${{github.run_id}}
         docker push ${{ secrets.DOCKER_USERNAME }}/rest-with-spring-boot-erudio-get:latest
