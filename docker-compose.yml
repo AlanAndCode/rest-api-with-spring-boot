@@ -19,9 +19,10 @@ services:
     networks:
       - rest-api-network
   rest-api-with-spring-boot:
+    image: rest-api-with-spring-boot
+    container_name: rest-api-with-spring-boot
     restart: always
     build: .
-    working_dir: /rest-api-with-spring-boot
     environment:
       TZ: America/Sao_Paulo
       SPRING.DATASOURCE.URL: jdbc:mysql://db:3308/rest_api_with_spring_boot?useTimezone=true&serverTimezone=UTC
