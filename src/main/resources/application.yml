@@ -12,7 +12,7 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3308/rest_api_with_spring_boot?useTimezone=true&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/rest_api_with_spring_boot?useTimezone=true&serverTimezone=UTC
     username: root
     password: admin123
   jpa:

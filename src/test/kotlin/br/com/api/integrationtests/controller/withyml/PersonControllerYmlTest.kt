@@ -263,7 +263,7 @@ class PersonControllerYmlTest : AbstractIntegrationTest() {
 
         val people = wrapper.embedded!!.persons
 
-        val item1 = people?.get(0)
+        val item1 = people?.get(1)
 
         assertNotNull(item1!!.id)
         assertNotNull(item1.firstName)
@@ -329,7 +329,7 @@ class PersonControllerYmlTest : AbstractIntegrationTest() {
         assertEquals("Senna", item1.lastName)
         assertEquals("São Paulo", item1.address)
         assertEquals("Male", item1.gender)
-        assertEquals(true, item1.enabled)
+        assertEquals(false, item1.enabled)
     }
 
     @Test

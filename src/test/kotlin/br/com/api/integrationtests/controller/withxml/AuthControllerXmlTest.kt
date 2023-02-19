@@ -1,7 +1,7 @@
 package br.com.api.integrationtests.controller.withxml
 
-import br.com.api.data.vo.v1.AccountCredentialsVO
-import br.com.api.data.vo.v1.TokenVO
+import br.com.api.integrationtests.vo.AccountCredentialsVO
+import br.com.api.integrationtests.vo.TokenVO
 import br.com.api.integrationtests.TestConfigs
 import br.com.api.integrationtests.testconainers.AbstractIntegrationTest
 import io.restassured.RestAssured
