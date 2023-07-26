@@ -20,8 +20,8 @@ More information about Swagger and JWT:
 * [Swagger with Spring Boot and Security](https://medium.com/turkcell/swagger-with-spring-boot-and-security-cf8585dcf3b2)
 * [Using Swagger (OpenAPI) for a Spring REST API With Kotlin](https://www.baeldung.com/kotlin/swagger-spring-rest-api)
 
-
-
+More information about Query Params:
+* [Query Params](https://docs.oracle.com/en/cloud/saas/cx-commerce/22c/ccdev/rest-api-query-parameters.html#GUID-3E43ABCC-72AA-46A1-B8C8-1DA8CDEAE9AB)
 
 ## Requirements
 > * [Docker](https://docs.docker.com/get-docker/) 
