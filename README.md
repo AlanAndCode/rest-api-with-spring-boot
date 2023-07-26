@@ -1,4 +1,17 @@
 # Rest API with Spring Boot
+
+> Restful API built with Kotlin and Spring Framework.
+
+More information about HATEOAS:
+* [Richardson maturity model](https://martinfowler.com/articles/richardsonMaturityModel.html)
+* [HATEOAS wikipedia](https://en.wikipedia.org/wiki/HATEOAS)
+
+
+More information about Swagger:
+* [Swagger with Spring Boot and Security])(https://medium.com/turkcell/swagger-with-spring-boot-and-security-cf8585dcf3b2)
+* 
+
+
 [![Continuous Integration with Github Actions](https://github.com/AlanAndCode/rest-api-with-spring-boot/actions/workflows/continuous_integration.yml/badge.svg)](https://github.com/AlanAndCode/rest-api-with-spring-boot/actions/workflows/continuous_integration.yml)
 
 [![Docker Hub Repo](https://img.shields.io/docker/pulls/alanandcode/rest-with-spring-boot-erudio-get.svg)](https://hub.docker.com/repository/docker/alanandcode/rest-with-spring-boot-erudio-get)
