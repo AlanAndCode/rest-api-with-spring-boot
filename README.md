@@ -8,8 +8,8 @@ More information about HATEOAS:
 
 
 More information about Swagger:
-* [Swagger with Spring Boot and Security])(https://medium.com/turkcell/swagger-with-spring-boot-and-security-cf8585dcf3b2)
-* 
+* [Swagger with Spring Boot and Security](https://medium.com/turkcell/swagger-with-spring-boot-and-security-cf8585dcf3b2)
+* [Using Swagger (OpenAPI) for a Spring REST API With Kotlin] (https://www.baeldung.com/kotlin/swagger-spring-rest-api)
 
 
 [![Continuous Integration with Github Actions](https://github.com/AlanAndCode/rest-api-with-spring-boot/actions/workflows/continuous_integration.yml/badge.svg)](https://github.com/AlanAndCode/rest-api-with-spring-boot/actions/workflows/continuous_integration.yml)
