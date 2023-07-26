@@ -16,7 +16,7 @@ More information about HATEOAS:
 * [HATEOAS wikipedia](https://en.wikipedia.org/wiki/HATEOAS)
 
 
-More information about Swagger:
+More information about Swagger and JWT:
 * [Swagger with Spring Boot and Security](https://medium.com/turkcell/swagger-with-spring-boot-and-security-cf8585dcf3b2)
 * [Using Swagger (OpenAPI) for a Spring REST API With Kotlin](https://www.baeldung.com/kotlin/swagger-spring-rest-api)
 
